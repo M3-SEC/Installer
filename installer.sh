@@ -20,7 +20,7 @@ echo "2     Wifi Tools";
 echo "3     Website Tools";
 echo "4     Install Tool";
 echo "5     Update Tool"
-echo "5     exit"
+echo "6     exit"
 read menuinput
 if [[ $menuinput == 1 ]]; then
     clear
@@ -32,12 +32,17 @@ if [[ $menuinput == 1 ]]; then
     echo "╚═╝     ╚═╝╚═════╝       ╚══════╝╚══════╝ ╚═════╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝";
     echo "                                                                                                ";
     echo "1     Updater";
+    echo "99    Menu";
     echo ""
     read input_1
     if [[ $input_1 == 1 ]]; then
         cd
         git clone https://github.com/M3-SEC/Updater
         clear
+        bash /root/Installer/installer.sh
+    
+    elif [[ $input_1 == 99 ]]; then
+        exit
         bash /root/Installer/installer.sh
     fi
 elif [[ $menuinput == 2 ]]; then 
@@ -49,6 +54,7 @@ elif [[ $menuinput == 2 ]]; then
     echo " ╚══╝╚══╝ ╚═╝╚═╝     ╚═╝      ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝";
     echo "                                                                      ";
     echo "1     Fluxion";
+    echo "99    Menu"
     read input_2
     if [[ $input_2 == 1 ]]; then
         cd 
@@ -57,6 +63,10 @@ elif [[ $menuinput == 2 ]]; then
         chmod +x fluxion.sh
         ./fluxion.sh
         cd
+
+    elif [[ $input_2 == 99 ]]; then
+        exit
+        bash /root/Installer/installer.sh
     fi
 elif [[ $menuinput == 3 ]]; then
     echo "██╗    ██╗███████╗██████╗ ███████╗██╗████████╗███████╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗";
@@ -66,8 +76,22 @@ elif [[ $menuinput == 3 ]]; then
     echo "╚███╔███╔╝███████╗██████╔╝███████║██║   ██║   ███████╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║";
     echo " ╚══╝╚══╝ ╚══════╝╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚══════╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝";
     echo "                                                                                                     ";
-    echo "1     TEST"
+    echo "1     DZGEN"
+    echo "99    Menu"
+    read input_3
+    if [[ $input_3 ]]; then
+        cd
+        git clone https://github.com/joker25000/DZGEN
+        cd DZGEN
+        chmod +x DZGEN
+        ./DZGEN
+
+    elif [[ $input_3 == 99 ]]; then
+        exit
+        bash /root/Installer/installer.sh
+    fi
 elif [[ $menuinput == 4 ]]; then
+    clear
     cd
     echo "" >> .bashrc
     echo "alias Installer='bash /root/Installer/installer.sh'" >> .bashrc
@@ -81,6 +105,8 @@ elif [[ $menuinput == 5 ]]; then
     cd Installer
     clear
     bash /root/Installer/installer.sh
+elif [[ $menuinput == 6 ]]; then
+    exit
 else 
     clear 
     echo "What?"
