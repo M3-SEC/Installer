@@ -7,7 +7,7 @@ echo "██║██╔██╗ ██║███████╗   ██║ 
 echo "██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗";
 echo "██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║";
 echo "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝";
-echo "                                M3-Sec.        V: 0.01    ";
+echo "                                M3-Sec.        V: 0.02    ";
 echo "                                                                      ";
 echo "                                                                      ";
 echo "                                                                      ";
@@ -40,9 +40,8 @@ if [[ $menuinput == 1 ]]; then
         git clone https://github.com/M3-SEC/Updater
         clear
         bash /root/Installer/installer.sh
-    
     elif [[ $input_1 == 99 ]]; then
-        exit
+        clear
         bash /root/Installer/installer.sh
     fi
 elif [[ $menuinput == 2 ]]; then 
@@ -63,9 +62,8 @@ elif [[ $menuinput == 2 ]]; then
         chmod +x fluxion.sh
         ./fluxion.sh
         cd
-
     elif [[ $input_2 == 99 ]]; then
-        exit
+        clear
         bash /root/Installer/installer.sh
     fi
 elif [[ $menuinput == 3 ]]; then
@@ -85,9 +83,8 @@ elif [[ $menuinput == 3 ]]; then
         cd DZGEN
         chmod +x DZGEN
         ./DZGEN
-
     elif [[ $input_3 == 99 ]]; then
-        exit
+        clear
         bash /root/Installer/installer.sh
     fi
 elif [[ $menuinput == 4 ]]; then
