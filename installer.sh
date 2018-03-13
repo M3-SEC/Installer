@@ -80,7 +80,7 @@ elif [[ $menuinput == 3 ]]; then
     echo "1     DZGEN"
     echo "99    Menu"
     read input_3
-    if [[ $input_3 ]]; then
+    if [[ $input_3 == 1 ]]; then
         cd
         git clone https://github.com/joker25000/DZGEN
         cd DZGEN
