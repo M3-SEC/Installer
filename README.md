@@ -16,3 +16,6 @@ Now run
 Installer
 ```
 and you are ready to use it.
+
+# Support M3
+BTC-Adress:     3Kan7wAjgxikZbty8am7v2Cu4Jn8LxKmhD
