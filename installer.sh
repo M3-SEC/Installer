@@ -8,7 +8,7 @@ echo "██║██╔██╗ ██║███████╗   ██║ 
 echo "██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗";
 echo "██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║";
 echo "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝";
-echo "                                M3-Sec.        V: 0.04    ";
+echo "                                M3-Sec.        V: 0.06    ";
 echo "                                                                      ";
 echo "                                                                      ";
 echo "                                                                      ";
@@ -55,7 +55,8 @@ elif [[ $menuinput == 2 ]]; then
     echo " ╚══╝╚══╝ ╚═╝╚═╝     ╚═╝      ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝";
     echo "                                                                      ";
     echo "1     Fluxion";
-    echo "99    Menu"
+    echo "2     kickthemout";
+    echo "99    Menu";
     read input_2
     if [[ $input_2 == 1 ]]; then
         cd 
@@ -64,6 +65,13 @@ elif [[ $menuinput == 2 ]]; then
         chmod +x fluxion.sh
         ./fluxion.sh
         cd
+    elif [[ $input_2 == 2 ]]; then
+        sudo apt-get install nmap
+        cd
+        git clone https://github.com/k4m4/kickthemout.git
+        cd kickthemout
+        sudo -H pip3 install -r requirements.txt
+        sudo python3 kickthemout.py
     elif [[ $input_2 == 99 ]]; then
         clear
         bash /root/Installer/installer.sh
@@ -95,8 +103,8 @@ elif [[ $menuinput == 4 ]]; then
     cd
     echo "" >> .bashrc
     echo "alias Installer='bash /root/Installer/installer.sh'" >> .bashrc
-    echo "Now, please restart your Terminal"
-    exit
+    source .bashrc
+    bash /root/Installer/installer.sh
 elif [[ $menuinput == 5 ]]; then
     clear
     cd
