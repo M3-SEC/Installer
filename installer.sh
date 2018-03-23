@@ -8,7 +8,7 @@ echo "██║██╔██╗ ██║███████╗   ██║ 
 echo "██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗";
 echo "██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║";
 echo "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝";
-echo "                                M3-Sec.        V: 0.06    ";
+echo "                                M3-Sec.        V: 0.07    ";
 echo "                                                                      ";
 echo "                                                                      ";
 echo "                                                                      ";
@@ -85,7 +85,8 @@ elif [[ $menuinput == 3 ]]; then
     echo "╚███╔███╔╝███████╗██████╔╝███████║██║   ██║   ███████╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║";
     echo " ╚══╝╚══╝ ╚══════╝╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚══════╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝";
     echo "                                                                                                     ";
-    echo "1     DZGEN"
+    echo "1     DZGEN";
+    echo "2     NoSQLMap"
     echo "99    Menu"
     read input_3
     if [[ $input_3 == 1 ]]; then
@@ -94,6 +95,11 @@ elif [[ $menuinput == 3 ]]; then
         cd DZGEN
         chmod +x DZGEN
         ./DZGEN
+    elif [[ $input_3 == 2 ]]; then
+        cd
+        git clone https://github.com/codingo/NoSQLMap.git
+        cd NoSQLMap
+        python setup.py install
     elif [[ $input_3 == 99 ]]; then
         clear
         bash /root/Installer/installer.sh
