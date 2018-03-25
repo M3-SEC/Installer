@@ -8,7 +8,7 @@ echo "██║██╔██╗ ██║███████╗   ██║ 
 echo "██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗";
 echo "██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║";
 echo "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝";
-echo "                                M3-Sec.        V: 0.07    ";
+echo "                                M3-Sec.        V: 0.08    ";
 echo "                                                                      ";
 echo "                                                                      ";
 echo "                                                                      ";
@@ -33,6 +33,7 @@ if [[ $menuinput == 1 ]]; then
     echo "╚═╝     ╚═╝╚═════╝       ╚══════╝╚══════╝ ╚═════╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝";
     echo "                                                                                                ";
     echo "1     Updater";
+    echo "2     Life Tools";
     echo "99    Menu";
     echo ""
     read input_1
@@ -40,10 +41,15 @@ if [[ $menuinput == 1 ]]; then
         cd
         git clone https://github.com/M3-SEC/Updater
         clear
-        bash /root/Installer/installer.sh
+        bash ~/Installer/installer.sh
+    elif [[ $input_1 == 2 ]]; then
+        cd    
+        git clone https://github.com/M3-SEC/Life-Tools
+        cd Life-Tools
+        bash life_tools.sh
     elif [[ $input_1 == 99 ]]; then
         clear
-        bash /root/Installer/installer.sh
+        bash ~/Installer/installer.sh
     fi
 elif [[ $menuinput == 2 ]]; then 
     clear
@@ -74,7 +80,7 @@ elif [[ $menuinput == 2 ]]; then
         sudo python3 kickthemout.py
     elif [[ $input_2 == 99 ]]; then
         clear
-        bash /root/Installer/installer.sh
+        bash ~/Installer/installer.sh
     fi
 elif [[ $menuinput == 3 ]]; then
     clear
@@ -102,15 +108,15 @@ elif [[ $menuinput == 3 ]]; then
         python setup.py install
     elif [[ $input_3 == 99 ]]; then
         clear
-        bash /root/Installer/installer.sh
+        bash ~/Installer/installer.sh
     fi
 elif [[ $menuinput == 4 ]]; then
     clear
     cd
     echo "" >> .bashrc
-    echo "alias Installer='bash /root/Installer/installer.sh'" >> .bashrc
-    source .bashrc
-    bash /root/Installer/installer.sh
+    echo "alias Installer='bash ~/Installer/installer.sh'" >> .bashrc
+    touch .bashrc
+    bash ~/Installer/installer.sh
 elif [[ $menuinput == 5 ]]; then
     clear
     cd
@@ -118,7 +124,7 @@ elif [[ $menuinput == 5 ]]; then
     git clone https://github.com/M3-SEC/Installer
     cd Installer
     clear
-    bash /root/Installer/installer.sh
+    bash ~/Installer/installer.sh
 elif [[ $menuinput == 6 ]]; then
     exit
 else 
@@ -127,5 +133,5 @@ else
     echo ""
     echo ""
     echo ""
-    bash /root/Installer/installer.sh
+    bash ~/Installer/installer.sh
 fi
