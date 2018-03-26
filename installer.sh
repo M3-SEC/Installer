@@ -8,7 +8,7 @@ echo "██║██╔██╗ ██║███████╗   ██║ 
 echo "██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗";
 echo "██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║";
 echo "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝";
-echo "                                M3-Sec.        V: 0.08    ";
+echo "                                M3-Sec.        V: 0.08.1    ";
 echo "                                                                      ";
 echo "                                                                      ";
 echo "                                                                      ";
@@ -34,6 +34,7 @@ if [[ $menuinput == 1 ]]; then
     echo "                                                                                                ";
     echo "1     Updater";
     echo "2     Life Tools";
+    echo "3     Spoofmail";
     echo "99    Menu";
     echo ""
     read input_1
@@ -47,6 +48,12 @@ if [[ $menuinput == 1 ]]; then
         git clone https://github.com/M3-SEC/Life-Tools
         cd Life-Tools
         bash life_tools.sh
+    elif [[ $input_1 == 2 ]]; then
+        cd
+        git clone https://github.com/M3-SEC/spoofmail.git
+        cd spoofmail
+        chmod +x spoofmail.sh
+        ./spoofmail.sh
     elif [[ $input_1 == 99 ]]; then
         clear
         bash ~/Installer/installer.sh
